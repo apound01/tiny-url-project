@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+
+  <body style="font-size:20px; padding:50px;">
+    <% include partials/_header %>
+    <form action="/urls/<%= shortURL %>" method="POST" style="margin:">
+      <label for="editURL"><h2>Short URL <%= shortURL %>:</h2></label>
+      <input id="editedURL" type="text" name="editedURL" placeholder="<%= longURL %>" style="width: 300px">
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
