@@ -1,18 +1,15 @@
 <div class ="Brownies">
-<h3>Here are my teeny tiny URLs</h3>
 
+<h3>Here are My teeny tiny URLs</h3>
 <% for (const i in urls) {%>
-  <p> <%= i %> -- <%= urls[i] %></p>
+  <% if ( urls[i].user == email){ %>
+  <p> <%= urls[i].shortURL %> -- <%= urls[i].longURL %></p>
 
-  <form method="GET" action="/urls/<%= i %>/edit">
+
+  <form method="POST" action="/urls/<%= urls[i].shortURL %>/edit">
   <input type="submit" value="Edit"></form>
 
   <form method="POST" action="/urls/<%= i %>/delete">
   <input type="submit" value="Delete"></form>
+  <% }%>
 <% } %>
-
-</div>
-<div class = "new URL">
-  <br />
-<a href = "http://localhost:8080/urls/new"> Create New URL </a>
-</div>
